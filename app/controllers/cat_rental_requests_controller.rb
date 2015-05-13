@@ -1,18 +1,22 @@
 class CatRentalRequestsController < ApplicationController
 
-  # def new
-  #   @cat_rental_request = CatRentalRequest.new(cat_id: params(:cat_id))
-  #   render :new
-  # end
-
   def show
     @request = CatRentalRequest.find(params[:id])
     @cat = @request.cat
     render :show
   end
 
+  def index
+    @cat_rental_requests = CatRentalRequest.all
+    render :index
+  end
+
   def new
-    @cat_rental_request = CatRentalRequest.new(cat_id: params[:cat_id])
+    if params[:cat_id]
+      @cat_rental_request = CatRentalRequest.new(cat_id: params[:cat_id])
+    else
+      @cat_rental_request = CatRentalRequest.new
+    end
     render :new
   end
 
