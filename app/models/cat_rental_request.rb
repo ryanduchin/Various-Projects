@@ -50,7 +50,8 @@ class CatRentalRequest < ActiveRecord::Base
   end
 
   def no_overlaps
-    if !overlapping_requests.where(status: "APPROVED").empty? && status == "APPROVED"
+    if !overlapping_requests.where(status: "APPROVED").empty? &&
+        status == "APPROVED"
       errors[:schedule] << "overlaps with cat's previously approved request"
     end
   end

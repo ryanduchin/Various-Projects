@@ -1,6 +1,5 @@
 class CatRentalRequestsController < ApplicationController
 
-
   # def new
   #   @cat_rental_request = CatRentalRequest.new(cat_id: params(:cat_id))
   #   render :new
@@ -13,7 +12,7 @@ class CatRentalRequestsController < ApplicationController
   end
 
   def new
-    @cat_rental_request = CatRentalRequest.new
+    @cat_rental_request = CatRentalRequest.new(cat_id: params[:cat_id])
     render :new
   end
 
