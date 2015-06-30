@@ -1,0 +1,17 @@
+<h1>Board: <%= board.escape('title') %> </h1>
+
+<ul class="board-list-index sortable"></ul>
+
+<br><br>
+
+<button class="add-list">Add List</button>
+<div class="add-list"></div>
+
+<div class="bottom-links">
+  <button class="delete-board">Delete Board</button>
+  <a href="#" class="boards-index-link">Home</a>
+</div>
+
+<script type="text/javascript">
+  $(".sortable").sortable();
+</script>
