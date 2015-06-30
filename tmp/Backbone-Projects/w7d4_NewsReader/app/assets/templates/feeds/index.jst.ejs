@@ -1,0 +1,3 @@
+<% feeds.forEach(function(feed) { %>
+  <li class="list-group-item"><a href="#/feeds/<%= feed.id %>"><%= feed.escape('title') %></a></li>
+<% }); %>

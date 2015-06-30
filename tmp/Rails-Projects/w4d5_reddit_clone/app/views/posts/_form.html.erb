@@ -1,0 +1,47 @@
+<% action_val = post.persisted? ? post_url(post) : posts_url %>
+<% method_val = post.persisted? ? "PATCH" : "POST" %>
+<% submit_val = post.persisted? ? "Update Post" : "Create New" %>
+
+<form action="<%= action_val %>" method="POST">
+  <input type="hidden" name="_method" value="<%= method_val %>">
+  <%= csrf_tag %>
+
+  <label for="post_title">Title: </label>
+  <input
+    type="text"
+    name="post[title]"
+    value="<%= post.title %>"
+    id="post_title">
+
+  <label for="post_url">Url: </label>
+  <input
+    type="text"
+    name="post[url]"
+    value="<%= post.url %>"
+    id="post_url">
+
+  <label for="post_content">Content: </label>
+  <textarea name="post[content]"
+    id="post_content"><%= post.content %></textarea>
+
+  <br>
+  <br>
+  <br>
+
+  <label for="post_subs">Subs :</label>
+  <input type="hidden" value="">
+    <% subs.each do |sub| %>
+
+      <input
+        type="checkbox"
+        id="post_subs"
+        name="post[sub_ids][]"
+        value="<%= sub.id %>"
+        <%= "checked" if post.subs.include?(sub) %>>
+
+      <%= sub.title %>
+    <% end %>
+
+
+  <input type="submit" value="<%= submit_val %>">
+</form>

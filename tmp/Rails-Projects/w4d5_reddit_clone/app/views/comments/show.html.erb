@@ -1,0 +1,8 @@
+<%= comment.content %>
+<%= render "comments/form", parent_id: comment.id %>
+
+<ul>
+  <% comment.child_comments.each do |child_com| %>
+    <li><%= render comment_url(child_com) %></li>
+  <% end %>
+</ul>

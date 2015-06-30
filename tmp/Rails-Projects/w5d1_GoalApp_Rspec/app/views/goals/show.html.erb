@@ -1,0 +1,19 @@
+<h1>Goal <%= @goal.title %></h1>
+<br>
+
+<h1> <%= "COMPLETED!!!!!!!!!!!!" if @goal.completed == 1%></h1>
+<%= @goal.body %>
+<br>
+<%= "private" if @goal.private == 1 %>
+<br>
+<br><br>
+
+<%= link_to "Edit Goal", edit_goal_url(@goal) %>
+<br>
+<%= link_to "Delete Goal", goal_url(@goal), method: :delete %>
+<br>
+<%= link_to "All Goals", goals_url %>
+<br>
+
+
+<%= render "layouts/comments", type: @goal %>

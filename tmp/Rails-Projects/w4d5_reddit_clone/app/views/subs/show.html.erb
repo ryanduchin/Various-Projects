@@ -1,0 +1,15 @@
+<h1>All About <%= @sub.title %></h1>
+<h2><%= @sub.description %></h2>
+
+<h5>Moderator: <%= @sub.moderator.username %></h5>
+
+<ul>
+  <% @sub.posts.each do |post| %>
+    <li><%= link_to post.title, post_url(post) %></li>
+  <% end %>
+</ul>
+
+<br>
+<%= link_to "Edit This Sub", edit_sub_url(@sub) %>
+<br>
+<%= link_to "Create New Post", new_post_url %>

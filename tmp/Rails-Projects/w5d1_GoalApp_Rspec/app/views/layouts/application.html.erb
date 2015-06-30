@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GoalingApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render "layouts/errors" %>
+<br>
+
+<%= yield %>
+
+<% if logged_in? %>
+  Current user is: <%= current_user.username %>
+  <%= button_to "Sign Out", session_url, method: :delete%>
+<% end %>
+
+</body>
+</html>

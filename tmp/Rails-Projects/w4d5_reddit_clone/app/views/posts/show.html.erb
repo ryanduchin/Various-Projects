@@ -1,0 +1,28 @@
+<h1><%= @post.title %></h1>
+<h5><%= @post.url %></h5>
+
+<p><%= @post.content %></p>
+<hr>
+
+<p>By <%= @post.author.username %></p>
+<p>Submitted <%= time_ago_in_words(@post.created_at) %> ago</p>
+
+<p>Sub Titles: </p>
+<ul>
+  <% @post.subs.each do |s| %>
+    <li><%= link_to s.title, sub_url(s) %></li>
+  <% end %>
+</ul>
+
+
+<p>Comments:</p>
+<ul>
+  <% @all_comments[nil].each do |comment| %>
+    <%= render "comments/comment", comment: comment %>
+    <hr>
+  <% end %>
+</ul>
+<hr>
+<%= render "comments/form", parent_id: nil %>
+
+<%= link_to "Edit Post", edit_post_url(@post) %>

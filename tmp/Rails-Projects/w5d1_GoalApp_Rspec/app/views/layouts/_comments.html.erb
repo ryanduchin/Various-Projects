@@ -1,0 +1,24 @@
+Comments
+
+<ul>
+  <% type.comments.each do |comment| %>
+    <li>
+      <%= comment.body %>
+      <%= comment.author.username %>
+      <%= button_to "delete comment", comment_url(comment), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<form action="<%= comments_url%>" method="post">
+  <%= csrf_tag %>
+
+  <input type="hidden" name="comment[commentable_type]" value="<%= type.class %>">
+  <input type="hidden" name="comment[commentable_id]" value="<%= type.id %>">
+
+  <label>Add Comment
+    <textarea name="comment[body]"></textarea>
+  </label>
+
+  <input type="submit" value="Submit Comment">
+</form>

@@ -1,0 +1,6 @@
+<button class="refresh btn btn-info">Refresh</button>
+<% feed.entries().forEach( function (entry) { %>
+  <li class="list-group-item">
+    <a href='<%= entry.escape("link") %>'><%= entry.escape("title") %></a>
+  </li>
+<% }) %>

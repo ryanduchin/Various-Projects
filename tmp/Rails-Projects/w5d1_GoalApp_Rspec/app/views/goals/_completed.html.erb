@@ -1,0 +1,10 @@
+<form action="<%= goal_url(goal)%>" method="POST">
+  <%= csrf_tag %>
+  <input type="hidden" name="_method" value="PATCH">
+  <label>Completed?
+    <input name="goal[completed]" type="hidden" value="0">
+    <input type="checkbox" name="goal[completed]" value="1"
+          <%= "checked" if goal.completed == 1 %>>
+  </label>
+  <input type="submit" value="Good for you!">
+</form>

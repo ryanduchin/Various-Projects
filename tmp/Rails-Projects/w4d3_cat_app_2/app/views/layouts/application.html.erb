@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NinetyNineCatsDay1</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= render "shared/errors" %>
+  <%= render "shared/messages" %>
+
+
+<p>
+  <% if current_user %>
+    Welcome <%= current_user.user_name %>!
+    Not <%= current_user.user_name %>?
+      <%= link_to "Logout",
+        session_url,
+        method: :delete %>
+  <% else %>
+    <%= link_to "Login", new_session_url %> or <%= link_to "sign up.", new_user_url %>
+  <% end %>
+</p>
+
+<%= yield %>
+
+</body>
+</html>

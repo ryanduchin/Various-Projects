@@ -1,0 +1,3 @@
+This is the early version of the file. The later version of the file was
+not pushed to git and thought to be a duplicate of this, and was deleted
+and is lost. Whoops.

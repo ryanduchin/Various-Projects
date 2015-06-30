@@ -1,0 +1,151 @@
+
+.badge {
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 100%;
+  border:none;
+  font-size: 14;
+}
+
+
+body{
+   font-family: 'Roboto', sans-serif;
+   background-color: #eee;
+ }
+
+.navbar {
+  background-color: red;
+  font-size: 16px;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-header, .nav-buttons > li {
+  float: left;
+  padding: 0px 20px;
+  border-left: 1px solid;
+  border-color: #ccc;
+  line-height: 40px;
+}
+
+nav h1:hover, nav li:hover {
+  background-color: #000000
+}
+
+
+.nav-header, .nav-buttons > li:last-child {
+  border-right: 1px solid;
+  border-color: #ccc;
+}
+
+.nav-header {
+  position: relative;
+  left: 180px;
+  font-weight: bolder;
+}
+
+nav ul {
+  position: absolute;
+  right: 180px;
+}
+
+.notification-list > li {
+  display: none;
+  position: relative;
+  padding: 0px 20px;
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-color: #CCCCCC;
+  width: 200px;
+  left: 78px;
+  font-size: 14px;
+  color: black;
+  background-color: white
+}
+
+.notification-list > li:last-child {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.nav-buttons > li:hover li {
+  display: block;
+  clear: both;
+}
+
+.nav-buttons > li li:hover{
+  background-color: #ccc;
+}
+
+.nav-buttons > li:first-child:hover .badge {
+  background-color: red;
+}
+
+.content section {
+  position: relative;
+  display: block;
+  float: left;
+  /*margin-right: 1px;*/
+  padding: 20px;
+  min-height: 200px;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  left: 180px;
+  background-color: white;
+}
+
+.content-sidebar {
+  min-width: 200px;
+}
+
+.content-main {
+  min-width: 619px;
+  border-right: 1px solid #ccc;
+}
+
+
+.content ::before {
+  content: "hello"
+  display: block;
+  position: absolute;
+  width: 1px;
+  top: 0;
+  left: 240px;
+  bottom: 0;
+  background-color: #ccc;
+}
+
+footer {
+  background-color: #ffffff !important;
+  font-size: 14px;
+  color: #aaa;
+  position: relative;
+  left: 180px;
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-color: #ccc;
+  line-height: 30px;
+  height: 50px;
+  width: 880px;
+  padding: 0px 10px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+}
+footer .copyright {
+  float: left;
+  padding: 10px;
+}
+
+/*footer .footer-links {
+  position: relative;
+  right: 0px:
+}*/
+
+footer .footer-links li {
+  float: right;
+  padding: 10px 10px;
+
+}

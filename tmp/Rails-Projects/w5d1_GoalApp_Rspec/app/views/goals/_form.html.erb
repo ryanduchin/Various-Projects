@@ -1,0 +1,24 @@
+<% action_val = @goal.persisted? ? goal_url(@goal) : goals_url %>
+<% method_val = @goal.persisted? ? "PATCH" : "POST" %>
+<% submit_button = @goal.persisted? ? "Update Goal" : "Submit Goal" %>
+
+<form action="<%= action_val%>" method="POST">
+  <input type="hidden" name="_method" value="<%= method_val%>">
+  <%= csrf_tag %>
+
+  <label>Title
+    <input type="text" name="goal[title]" value="<%= @goal.title%>">
+  </label>
+  <br>
+
+  <label>Body
+    <input type="text" name="goal[body]" value="<%= @goal.body%>">
+  </label>
+  <br>
+
+  <label>Private
+    <input type="checkbox" name="goal[private]" value="1" "<%= "checked" if @goal.private%>">
+  </label>
+
+  <input type="submit" value="<%= submit_button%>">
+</form>

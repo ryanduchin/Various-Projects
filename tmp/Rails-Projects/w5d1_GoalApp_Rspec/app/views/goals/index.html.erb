@@ -1,0 +1,17 @@
+<h1>All Goals</h1>
+
+<ul>
+  <% @goals.each do |goal| %>
+    <% if goal.private == 0 || goal.user_id == current_user.id %>
+      <li>
+        <%= link_to goal.title, goal_url(goal) %>
+        <%= render "goals/completed", goal: goal %>
+
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br>
+<%= link_to "Create New Goal", new_goal_url %>
+<br>

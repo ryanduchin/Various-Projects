@@ -1,0 +1,11 @@
+<ul>
+  <% comment.child_comments.each do |child_com| %>
+    <li>
+      <%= child_com.content %>
+      <%= render "comments/form", parent_id: comment.id %>
+    </li>
+      <% if child_com.child_comments %>
+        <%= render "comments/children", comment: child_com %>
+      <% end %>
+  <% end %>
+</ul>

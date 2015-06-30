@@ -1,0 +1,8 @@
+<%= comment.content %>
+<%= render "comments/form", parent_id: comment.id %>
+
+<ul>
+  <% @all_comments[comment.id].each do |com2| %>
+    <li><%= render "comments/comment", comment: com2 %></li>
+  <% end %>
+</ul>
