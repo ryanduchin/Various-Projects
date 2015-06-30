@@ -1,0 +1,11 @@
+This is a list of projects made to learn Backbone
+
+Pokedex is an app to manage pokemon and their toys and was an introduction to Backbone.
+Part 1 - We practiced creating models and collections
+Part 2 - routers, templates and views
+
+Journal App is similar to something like Evernote and allowed users to create posts
+
+News Reader is an RSS Reader
+
+The Trello Clone was made completely independently. We added similar drag-and-drop functionality and had nested cards in lists in boards.
