@@ -11,3 +11,5 @@ We made a bare-bones game of Asteroids using canvas on w6d1. The game is rather 
 We learned and practiced CSS by trying to copy a facebook-esque template on w6d2.
 
 We learned about and created jquery plugins on w6d4 and made an image carousel, thumbnail image viewer, and tabs showing different views.
+
+Ajax Twitter is a twitter clone that was used to practice AJAX (asynchronous JS and JSON). We created a jquery plugin toggle follow/unfollow button, realtime user search, and submitting a form without a page refresh.
